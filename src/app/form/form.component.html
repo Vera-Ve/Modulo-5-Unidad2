@@ -1,0 +1,17 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+<p>Nombre:</p>
+<input type="text" formControlName="firstName">
+<p>Apellido:</p>
+<input type="text" formControlName="lastName">
+<p>Email:</p>
+<input type="text" formControlName="email">
+<p>Phone (10 digitos):</p>
+<input type="text" formControlName="phone">
+<p>Pais:</p>
+<input type="text" formControlName="country">
+<p>Ciudad:</p>
+<input type="text" formControlName="city">
+<p>Direccion:</p>
+<input type="text" formControlName="adress">
+<button type="submit" *ngIf="profileForm.valid">Enviar datos</button>
+</form>

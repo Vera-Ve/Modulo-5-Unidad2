@@ -1,0 +1,19 @@
+<p [ngClass]="activate ? 'changed' : 'normal'">Usuarios</p>
+<table>
+    <thead>
+      <tr>
+        <th *ngFor="let col of getColumnNames()" [ngClass]="activate ? 'changed' : 'normal'"> {{ col }} </th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+          <td> {{ user.id }} </td>
+          <td> {{ user.first_name }} </td>
+          <td *ngIf="activate"> {{ user.last_name }} </td>
+          <td *ngIf="activate"> {{ user.gender }} </td>
+          <td *ngIf="!activate"> {{ user.email }} </td>
+          <td *ngIf="!activate"> {{ user.phone }} </td>
+        </tr>
+      </tbody>
+    </table>
+    <button (click)="activate = !activate">Change table</button>
